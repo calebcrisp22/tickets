@@ -15,7 +15,7 @@
   "EMBED_COLOR": "#C300FF",
   "SUCCESS_COLOR": "#00ff9d",
   "ERROR_COLOR": "#FF2E63",
-  "FOOTER_TEXT": "SERVER_NAME Support \u2022 Made with \u2764\ufe0f",
+  "FOOTER_TEXT": "Ryuko Support \u2022 Made with \u2764\ufe0f",
   "STATUS": {
     "enabled": true,
     "interval_seconds": 35,
@@ -51,8 +51,8 @@
   "TICKET_PANEL": {
     "banner_url": "https://cdn.discordapp.com/attachments/1478890383814430893/1478903101439086633/IMG_3277.png?ex=69aa1758&is=69a8c5d8&hm=f39cdab1b0cc6e750622532b51248084597639ca63220d8ce5879bf5080909db",
     "logo_url": "https://cdn.discordapp.com/attachments/1478890383814430893/1478914036619018270/IMG_3275.png?ex=69aa2187&is=69a8d007&hm=cc5cb8ef83a30e4a96676b780f550005717b2367ffcf41554eb30162bda50227",
-    "title": "SERVER_NAME Support \u2022 Create a Ticket",
-    "description": "Welcome to SERVER_NAME Support. To ensure your request is handled by the right specialist as quickly as possible, please select the most relevant category from the options listed below.",
+    "title": "Ryuko Support \u2022 Create a Ticket",
+    "description": "Welcome to Ryuko Support. To ensure your request is handled by the right specialist as quickly as possible, please select the most relevant category from the options listed below.",
     "ticket_types": [
       {
         "label": "purchase",
