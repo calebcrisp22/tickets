@@ -27,15 +27,33 @@ if not os.path.exists(CONFIG_FILE):
 with open(CONFIG_FILE, "r", encoding="utf-8") as f:
     config = json.load(f)
 
-TOKEN = config["TOKEN"]
-TICKET_CATEGORY_ID = config.get("TICKET_CATEGORY_ID", 0)
-SUPPORT_ROLE_ID = config.get("SUPPORT_ROLE_ID", 0)
-TRANSCRIPT_CHANNEL_ID = config.get("transcript_channel_id", None)
-WELCOME_CHANNEL_ID = config.get("welcome_channel_id", None)
-BLACKLIST_LOG_CHANNEL_ID = config.get("blacklist_log_channel_id", None)
-MOD_LOG_CHANNEL_ID = config.get("mod_log_channel_id", None)
-ANTI_NUKE_LOG_CHANNEL_ID = config.get("anti_nuke_log_channel_id", None)
-ANNOUNCE_LOG_CHANNEL_ID = config.get("announce_log_channel_id", None)
+TOKEN = os.getenv("TOKEN") or config["TOKEN"]
+
+
+def _env_id(env_name, fallback_key, default=0):
+    """Read a Discord ID from the environment first, falling back to config.json."""
+    env_value = os.getenv(env_name)
+    if env_value is not None and env_value != "":
+        try:
+            return int(env_value)
+        except ValueError:
+            pass
+    fallback = config.get(fallback_key, default)
+    try:
+        return int(fallback) if fallback is not None else default
+    except (TypeError, ValueError):
+        return default
+
+
+TICKET_CATEGORY_ID = _env_id("TICKET_CATEGORY_ID", "TICKET_CATEGORY_ID", 0)
+SUPPORT_ROLE_ID = _env_id("SUPPORT_ROLE_ID", "SUPPORT_ROLE_ID", 0)
+TRANSCRIPT_CHANNEL_ID = _env_id("TRANSCRIPT_CHANNEL_ID", "transcript_channel_id", 0)
+WELCOME_CHANNEL_ID = _env_id("WELCOME_CHANNEL_ID", "welcome_channel_id", 0)
+BLACKLIST_LOG_CHANNEL_ID = _env_id("BLACKLIST_LOG_CHANNEL_ID", "blacklist_log_channel_id", 0)
+MOD_LOG_CHANNEL_ID = _env_id("MOD_LOG_CHANNEL_ID", "mod_log_channel_id", 0)
+ANTI_NUKE_LOG_CHANNEL_ID = _env_id("ANTI_NUKE_LOG_CHANNEL_ID", "anti_nuke_log_channel_id", 0)
+ANNOUNCE_LOG_CHANNEL_ID = _env_id("ANNOUNCE_LOG_CHANNEL_ID", "announce_log_channel_id", 0)
+VOUCH_CHANNEL_ID = _env_id("VOUCH_CHANNEL", "vouch_channel", 0)
 
 WELCOME_MESSAGE = config.get("welcome_message", "Welcome {user}!\nDeveloped by Rey")
 
@@ -133,20 +151,19 @@ def create_embed(title=None, description=None, color=MAIN_COLOR, guild=None):
 # ==============================================
 
 async def send_log(guild: discord.Guild, log_type: str, embed: discord.Embed):
-    channel_id_keys = {
-        "transcript": "transcript_channel_id",
-        "blacklist": "blacklist_log_channel_id",
-        "mod": "mod_log_channel_id",
-        "anti_nuke": "anti_nuke_log_channel_id",
-        "announce": "announce_log_channel_id"
+    channel_id_map = {
+        "transcript": TRANSCRIPT_CHANNEL_ID,
+        "blacklist": BLACKLIST_LOG_CHANNEL_ID,
+        "mod": MOD_LOG_CHANNEL_ID,
+        "anti_nuke": ANTI_NUKE_LOG_CHANNEL_ID,
+        "announce": ANNOUNCE_LOG_CHANNEL_ID
     }
 
-    key = channel_id_keys.get(log_type)
-    if not key:
+    if log_type not in channel_id_map:
         print(f"[LOG] Unknown log type: {log_type}")
         return
 
-    channel_id = config.get(key)
+    channel_id = channel_id_map.get(log_type)
     if not channel_id:
         print(f"[LOG] No channel set for {log_type}")
         return
