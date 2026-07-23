@@ -37,13 +37,12 @@ MOD_LOG_CHANNEL_ID = config.get("mod_log_channel_id", None)
 ANTI_NUKE_LOG_CHANNEL_ID = config.get("anti_nuke_log_channel_id", None)
 ANNOUNCE_LOG_CHANNEL_ID = config.get("announce_log_channel_id", None)
 
-WELCOME_MESSAGE = config.get("welcome_message", "Welcome {user}!
-Developed by LiaMae")
+WELCOME_MESSAGE = config.get("welcome_message", "Welcome {user}!\nDeveloped by Rey")
 
 MAIN_COLOR = int(config.get("EMBED_COLOR", "#5865F2").replace("#", ""), 16)
 SUCCESS_COLOR = int(config.get("SUCCESS_COLOR", "#57F287").replace("#", ""), 16)
 ERROR_COLOR = int(config.get("ERROR_COLOR", "#ED4245").replace("#", ""), 16)
-FOOTER_TEXT = config.get("FOOTER_TEXT", "Developed by LiaMae")
+FOOTER_TEXT = config.get("FOOTER_TEXT", "Developed by Rey")
 
 STATUS_CFG = config.get("STATUS", {})
 STATUS_ENABLED = STATUS_CFG.get("enabled", True)
@@ -52,8 +51,8 @@ STATUS_RANDOM = STATUS_CFG.get("random_order", True)
 STATUS_ACTIVITIES = STATUS_CFG.get("activities", [])
 
 PANEL_CFG = config.get("TICKET_PANEL", {})
-PANEL_TITLE = PANEL_CFG.get("title", "Developed by LiaMae • Create a Ticket")
-PANEL_DESC = PANEL_CFG.get("description", "Developed by LiaMae Support. To ensure your request is handled by the right specialist as quickly as possible, please select the most relevant category from the options listed below.")
+PANEL_TITLE = PANEL_CFG.get("title", "Developed by Rey • Create a Ticket")
+PANEL_DESC = PANEL_CFG.get("description", "Developed by Rey Support. To ensure your request is handled by the right specialist as quickly as possible, please select the most relevant category from the options listed below.")
 PANEL_BANNER = PANEL_CFG.get("banner_url")
 
 TICKET_TYPES = PANEL_CFG.get("ticket_types", [])
@@ -183,7 +182,7 @@ async def on_member_join(member: discord.Member):
         msg_text = WELCOME_MESSAGE.format(user=member.mention)
 
         embed = create_embed(
-            title="Developed by LiaMae",
+            title="Developed by Rey",
             description=msg_text,
             color=MAIN_COLOR,
             guild=member.guild
@@ -1018,7 +1017,7 @@ async def log_setup(interaction: discord.Interaction):
         # Kategorie erstellen, wenn nicht vorhanden
         log_category = discord.utils.get(guild.categories, name="Logs")
         if not log_category:
-            log_category = await guild.create_category("Logs", reason="Log Setup by LiaMae")
+            log_category = await guild.create_category("Logs", reason="Log Setup by Rey")
             await log_category.edit(position=0)  # ganz oben
 
         # Channels und ihre Keys
@@ -1054,7 +1053,7 @@ async def log_setup(interaction: discord.Interaction):
                     name=name,
                     category=log_category,
                     topic=data["topic"],
-                    reason="Log Setup by LiaMae"
+                    reason="Log Setup by Rey"
                 )
 
                 # Permissions setzen
@@ -1810,7 +1809,7 @@ async def on_member_join(member: discord.Member):
         msg = WELCOME_MESSAGE.format(user=member.mention)
 
         embed = create_embed(
-            title="Developed by LiaMae",
+            title="Developed by Rey",
             description=msg,
             color=MAIN_COLOR,
             guild=member.guild
@@ -1974,7 +1973,7 @@ async def leaderboard(interaction: discord.Interaction):
 
 @bot.tree.command(name="help", description="Show all commands")
 async def help_cmd(interaction: discord.Interaction):
-    e = create_embed(title="LiaMae • Command Overview 🌟", guild=interaction.guild)
+    e = create_embed(title="Rey • Command Overview 🌟", guild=interaction.guild)
 
     e.add_field(
         name="🎟️ Tickets",
