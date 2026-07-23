@@ -1,0 +1,94 @@
+{
+  "TOKEN": "YOUR_TOKEN_HERE",
+  "TICKET_CATEGORY_ID": ID_HERE,
+  "SUPPORT_ROLE_ID": ID_HERE,
+  "transcript_channel_id": ID_HERE,
+  "welcome_channel_id": ID_HERE,
+  "blacklist_log_channel_id": ID_HERE,
+  "mod_log_channel_id": ID_HERE,
+  "anti_nuke_log_channel_id": ID_HERE,
+  "announce_log_channel_id": ID_HERE,
+  "vouch_channel": ID_HERE,
+  "welcome_thumbnail": "https://cdn.discordapp.com/attachments/1478890383814430893/1478914036619018270/IMG_3275.png?ex=69aa2187&is=69a8d007&hm=cc5cb8ef83a30e4a96676b780f550005717b2367ffcf41554eb30162bda50227",
+  "welcome_banner": "https://cdn.discordapp.com/attachments/1478890383814430893/1478903101439086633/IMG_3277.png?ex=69aa1758&is=69a8c5d8&hm=f39cdab1b0cc6e750622532b51248084597639ca63220d8ce5879bf5080909db",
+  "welcome_message": "\ud83d\ude80Welcome to SERVER_NAME Marketplace!\n\nThis is the place to buy, sell, and connect with trusted members.\n\n\u2705 Check the rules\n\u2705 Verify\n\u2705 Use the correct channels\n\u2705 Stay respectful\n\nLet\u2019s build a safe and successful trading community together!",
+  "EMBED_COLOR": "#C300FF",
+  "SUCCESS_COLOR": "#00ff9d",
+  "ERROR_COLOR": "#FF2E63",
+  "FOOTER_TEXT": "SERVER_NAME Support \u2022 Made with \u2764\ufe0f",
+  "STATUS": {
+    "enabled": true,
+    "interval_seconds": 35,
+    "random_order": true,
+    "activities": [
+      {
+        "type": "playing",
+        "name": "with Tickets \ud83c\udf9f\ufe0f",
+        "url": null
+      },
+      {
+        "type": "watching",
+        "name": "SERVER_NAME We love Them \ud83d\udc40",
+        "url": null
+      },
+      {
+        "type": "listening",
+        "name": "to your concerns \ud83c\udfa7",
+        "url": null
+      },
+      {
+        "type": "streaming",
+        "name": "WEB_NAME Sellauth Web",
+        "url": "WEBSITE_HERE"
+      },
+      {
+        "type": "playing",
+        "name": "Version 2026 \ud83d\udd25",
+        "url": null
+      }
+    ]
+  },
+  "TICKET_PANEL": {
+    "banner_url": "https://cdn.discordapp.com/attachments/1478890383814430893/1478903101439086633/IMG_3277.png?ex=69aa1758&is=69a8c5d8&hm=f39cdab1b0cc6e750622532b51248084597639ca63220d8ce5879bf5080909db",
+    "logo_url": "https://cdn.discordapp.com/attachments/1478890383814430893/1478914036619018270/IMG_3275.png?ex=69aa2187&is=69a8d007&hm=cc5cb8ef83a30e4a96676b780f550005717b2367ffcf41554eb30162bda50227",
+    "title": "SERVER_NAME Support \u2022 Create a Ticket",
+    "description": "Welcome to SERVER_NAME Support. To ensure your request is handled by the right specialist as quickly as possible, please select the most relevant category from the options listed below.",
+    "ticket_types": [
+      {
+        "label": "purchase",
+        "value": "Purchase",
+        "description": "Ticket to purchase items that are not listed on the website",
+        "emoji": "<:dollaer:1426343870609887274>",
+        "opening_embed_description": "**\ud83d\uded2 Purchase Ticket Opened**  Hello! Thank you for opening a purchase ticket.  **Please fill out the information below so we can process your order fast:**  **Product / Service:**  **Quantity:**  **Variant / Color / License etc.:**   **Payment Method Preference:** (if you have one)  ---  I'm ready to pay immediately once you send me the total and payment details.  Just reply with the filled information above."
+      },
+      {
+        "label": "replace",
+        "value": "replace",
+        "description": "**To process your replacement, please provide the following information. Make sure you have everything ready before the deadline.**\nMandatory Requirements:\n * **Proof The Product Doesn\u2019t Work**\n * **Product Invoice ID.**\n * **Full proof of payment.**\n * **Email you used for the payment.**",
+        "emoji": "<:op:1492606010790121545>",
+        "opening_embed_description": "**To process your replacement, please provide the following information. Make sure you have everything ready before the deadline.**\nMandatory Requirements:\n * **Product Invoice ID.**\n * **Full proof of payment.**\n * **Email you used for the payment.**"
+      },
+      {
+        "label": "Support",
+        "value": "Support",
+        "description": "Ticket for Support Needs",
+        "emoji": "<:eorror:1426343875211169903>",
+        "opening_embed_description": "**\ud83d\udee0\ufe0f Support Ticket Opened**  Hello! Thank you for opening a **Support** ticket.  Please let us know how we can help you today.  **Please reply with the following:**  \u2022 **Issue / Problem:**  \u2022 **What happened?**  \u2022 **Order Number / Username / Relevant Info:**  \u2022 **Any screenshots?** (optional but very helpful)  We will assist you as soon as possible.  Thank you! emoji::eorror~1:"
+      },
+      {
+        "label": "Other",
+        "value": "Other",
+        "description": "Ticket for non category stuff",
+        "emoji": "<:how:1426343882547003505>",
+        "opening_embed_description": "**\u2753 Other Ticket Opened**  Hello! Thank you for opening an **Other** ticket.  Please describe your request or issue in detail so we can help you as fast as possible.  **Please reply with the following:**  \u2022 **What do you need help with?**  \u2022 **More details / Explanation:**  \u2022 **Any screenshots or proof?** (if relevant)  We'll get back to you shortly.  Thank you!"
+      },
+      {
+        "label": "Scam",
+        "value": "Report Scammer",
+        "description": "If You Got Scammed By Someone In This  Server Choose This Category",
+        "emoji": "<a:ZL_RedAlert:1492609230249791528>",
+        "opening_embed_description": "Send Discord user/id\nVideo or screenshot proof"
+      }
+    ]
+  }
+}
