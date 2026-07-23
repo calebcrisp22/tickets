@@ -64,7 +64,7 @@
       {
         "label": "replace",
         "value": "replace",
-        "description": "**To process your replacement, please provide the following information. Make sure you have everything ready before the deadline.**\nMandatory Requirements:\n * **Proof The Product Doesn\u2019t Work**\n * **Product Invoice ID.**\n * **Full proof of payment.**\n * **Email you used for the payment.**",
+        "description": "Provide proof product doesn't work, invoice ID, payment proof & email used.",
         "emoji": "<:op:1492606010790121545>",
         "opening_embed_description": "**To process your replacement, please provide the following information. Make sure you have everything ready before the deadline.**\nMandatory Requirements:\n * **Product Invoice ID.**\n * **Full proof of payment.**\n * **Email you used for the payment.**"
       },
